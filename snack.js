@@ -15,8 +15,14 @@ function average(numeri) {
   return somma / numeri.length;
 }
 
+function isPalindrome(parola) {
+  const parolaInversa = parola.split("").reverse().join("");
+  return parola === parolaInversa;
+}
+
 module.exports = {
   getInitials,
   createSlug,
   average,
+  isPalindrome,
 };
