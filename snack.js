@@ -4,6 +4,9 @@ function getInitials(nomeCompleto) {
 }
 
 function createSlug(str) {
+  if (!str) {
+    throw new Error("stringa non valida");
+  }
   return str.toLowerCase().replaceAll(" ", "-");
 }
 
