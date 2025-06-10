@@ -23,9 +23,22 @@ function isPalindrome(parola) {
   return parola.trim() === parolaInversa;
 }
 
+function findPostById(posts, id) {
+  if (isNaN(id)) {
+    throw new Error(`"${id}" non esiste`);
+  }
+  posts.forEach((p) => {
+    if (p.id === undefined || p.title === undefined || p.slug === undefined) {
+      throw new Error("l array posts non è nel formato corretto");
+    }
+  });
+  return posts.find((p) => p.id === id) || null;
+}
+
 module.exports = {
   getInitials,
   createSlug,
   average,
   isPalindrome,
+  findPostById,
 };
